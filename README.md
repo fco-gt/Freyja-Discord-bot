@@ -1,8 +1,8 @@
 # Freyja Discord bot
 
-Bot de la comunidad de Hijos de FREYJA
+Bot de la comunidad de Hijos de FREYJA (El servidor Nº1 de VALHEIM de LATAM)
 
-Bot de moderacion y sistema de puntuacion para la comunidad de [Hijos de FREYJA ](https://discord.gg/rbk5XMKE2p)
+Funciones de moderacion y sistema de puntuacion para la comunidad de [Hijos de FREYJA ](https://discord.gg/rbk5XMKE2p)
 
 ### Utilidades del bot
 
