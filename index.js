@@ -1,10 +1,18 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const { Client, MessageEmbed, Collection, Guild, MessageAttachment } = require('discord.js');
+const {
+  Client,
+  MessageEmbed,
+  Collection,
+  Guild,
+  MessageAttachment
+} = require('discord.js');
 
 require('dotenv').config();
 const fs = require('fs');
-let { readdirSync } = require('fs');
+let {
+  readdirSync
+} = require('fs');
 
 let prefix = '!!';
 
@@ -80,7 +88,9 @@ client.on("guildMemberRemove", async member => {
   const schema = require('./models/user'); // Llamamos a la base de datos
   const canal = member.guild.channels.cache.get("934506899234246686"); // Canal de Log
 
-  const info = await schema.findOne({ id: member.id }, async (err, data) => { // Buscamos la ID de steam del usuario 
+  const info = await schema.findOne({
+    id: member.id
+  }, async (err, data) => { // Buscamos la ID de steam del usuario 
     if (err) throw err;
     if (data) { // Si tiene la ID de steam que la muestre en el Log
       const steam_id = data.steam_id;
@@ -103,7 +113,7 @@ client.on("guildMemberAdd", async user => {
     .setFooter('Bot Desarrollado por Mankeke#9299 | Dev Mankekito Bot')
   user.send(embed).catch(error => {
     console.log(error);
-   }) // Enviamos el embed al usuario
+  }) // Enviamos el embed al usuario
 
 });
 
@@ -138,23 +148,30 @@ client.on('messageDelete', message => {
   })
 })
 
-// Funciones para los Freycoins
+// Funciones para los Freycoins (puntos)
 
 // Balance del usuario
 client.bal = (id) => new Promise(async ful => {
-  const data = await schema.findOne({ id });
+  const data = await schema.findOne({
+    id
+  });
   if (!data) return ful(0);
   ful(data.coins);
 })
 
 // Agregar
 client.add = (id, coins) => {
-  schema.findOne({ id }, async (err, data) => {
+  schema.findOne({
+    id
+  }, async (err, data) => {
     if (err) throw err;
     if (data) {
       data.coins += coins;
     } else {
-      data = new schema({ id, coins })
+      data = new schema({
+        id,
+        coins
+      })
     }
     data.save();
   })
@@ -162,12 +179,17 @@ client.add = (id, coins) => {
 
 // Quitar
 client.rmv = (id, coins) => {
-  schema.findOne({ id }, async (err, data) => {
+  schema.findOne({
+    id
+  }, async (err, data) => {
     if (err) throw err;
     if (data) {
       data.coins -= coins;
     } else {
-      data = new schema({ id, coins: -coins })
+      data = new schema({
+        id,
+        coins: -coins
+      })
     }
     data.save();
   })
