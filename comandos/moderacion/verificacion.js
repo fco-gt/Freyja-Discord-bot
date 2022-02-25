@@ -22,14 +22,14 @@ module.exports = {
     }
 
     // Verifi
-    const verifi_rol = message.guild.roles.resolve("873300839316484187"); // Rol VERIFICAR
-    const member_rol = message.guild.roles.resolve("818581503516344381"); // Rol MIEMBRO
+    const verifi_rol = message.guild.roles.resolve(""); // Rol VERIFICAR
+    const member_rol = message.guild.roles.resolve(""); // Rol MIEMBRO
     const member = message.mentions.members.first(); // Usuario
 
     // Channel
-    const rules = message.guild.channels.cache.get("890401365715718156"); // Canal de reglas
-    const acces = message.guild.channels.cache.get("904752068600934470"); // Canal de acceso
-    const general = message.guild.channels.cache.get("878462803705471047"); // Canal general
+    const rules = message.guild.channels.cache.get(""); // Canal de reglas
+    const acces = message.guild.channels.cache.get(""); // Canal de acceso
+    const general = message.guild.channels.cache.get(""); // Canal general
 
     // DB
     const steam_id = args.slice(1).join(' '); // ID de steam
