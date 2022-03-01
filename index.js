@@ -65,9 +65,9 @@ const schema = require('./models/schema');
 // Bienvenida & Log de ingreso
 client.on("guildMemberAdd", async member => {
 
-  const canal = member.guild.channels.cache.get("900456260879667250"); // Canal de Log
-  const canal2 = member.guild.channels.cache.get("905113675969495040"); // Canal de bien
-  const reglas = member.guild.channels.cache.get("890401365715718156"); // Canal de reglas
+  const canal = member.guild.channels.cache.get(""); // Canal de Log
+  const canal2 = member.guild.channels.cache.get(""); // Canal de bien
+  const reglas = member.guild.channels.cache.get(""); // Canal de reglas
 
   const embed1 = new MessageEmbed()
     .setTitle("Nuevo integrante")
@@ -79,14 +79,14 @@ client.on("guildMemberAdd", async member => {
   canal.send(`---------------------------------------------\n**Nuevo Usuario:** ${member}\n**Id de Discord:** ${member.id}\n**Tag:** ${member.user.tag}\n---------------------------------------------`);
   canal2.send(embed1);
 
-  member.roles.add("873300839316484187"); // Da al usuario el rol VERIFICAR
+  member.roles.add(""); // Da al usuario el rol VERIFICAR
 });
 
 // Log de salida
 client.on("guildMemberRemove", async member => {
 
   const schema = require('./models/user'); // Llamamos a la base de datos
-  const canal = member.guild.channels.cache.get("934506899234246686"); // Canal de Log
+  const canal = member.guild.channels.cache.get(""); // Canal de Log
 
   const info = await schema.findOne({
     id: member.id
@@ -137,16 +137,6 @@ client.on('message', async message => {
     cmd.execute(client, message, args);
   }
 });
-
-
-// Snipe message
-client.on('messageDelete', message => {
-  client.snipes.set(message.channel.id, {
-    content: message.content,
-    delete: message.author,
-    canal: message.channel
-  })
-})
 
 // Funciones para los Freycoins (puntos)
 
