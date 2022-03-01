@@ -17,7 +17,7 @@ module.exports = {
 
         const freycoins = args[0]; // Cantidad de freycoins
         const razon = args.slice(2).join(" ") ? args.slice(2).join(" ") : "Razon sin especificar"; // Razon
-        const member = message.mentions.members.first() || client.users.cache.get(args[0]); // Usuario a dar
+        const member = message.mentions.members.first() || client.users.cache.get(args[1]); // Usuario a dar
 
         if (!freycoins) return message.reply("Ingresa la cantidad a agregar");
         if (!member) return message.reply("Debes mencionar a alguien");
