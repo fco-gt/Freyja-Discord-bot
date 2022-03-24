@@ -38,7 +38,7 @@ for (const file of puntosCommandFiles) {
   client.commands.set(command.name, command)
 }
 
-// Precense
+// Presence
 
 function presence() {
   client.user.setPresence({
