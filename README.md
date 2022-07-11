@@ -2,7 +2,7 @@
 
 Bot de la comunidad de Hijos de FREYJA (El servidor Nº1 de VALHEIM de LATAM)
 
-Funciones de moderacion y sistema de puntuacion para la comunidad de [Hijos de FREYJA ](https://discord.gg/rbk5XMKE2p)
+Funciones de moderacion y sistema de puntuacion para la comunidad de [Hijos de FREYJA](https://discord.gg/rbk5XMKE2p)
 
 Este bot no esta actualizado para discord.js v13
 
